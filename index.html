@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>SUBS.INTERNEYT.MJ</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ.NEYT Fiber - Ultra-Fast Internet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 5%;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .speed-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            transform: rotate(-5deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(-5deg) translateY(0px); }
+            50% { transform: rotate(-5deg) translateY(-20px); }
+        }
+
+        .speed-test-display {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .speed-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .speed-unit {
+            font-size: 1.5rem;
+            color: var(--gray);
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .pulse {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Plans Section */
+        .plans-section {
+            padding: 6rem 5%;
+            background: linear-gradient(to bottom, var(--dark), #1e293b);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .plans-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem;
+            border-radius: 50px;
+            width: fit-content;
+            margin: 0 auto 3rem;
+        }
+
+        .toggle-btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            background: transparent;
+            color: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .plan-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .plan-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 1.5rem;
+            right: -2rem;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.3rem 3rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .plan-header {
+            margin-bottom: 2rem;
+        }
+
+        .plan-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-speed {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .plan-speed span {
+            font-size: 1rem;
+            color: var(--gray);
+            -webkit-text-fill-color: var(--gray);
+        }
+
+        .plan-price {
+            margin: 1.5rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .plan-features i {
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        .plan-features .unavailable {
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .plan-features .unavailable i {
+            color: var(--gray);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-method {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-method:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .payment-method.selected {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .payment-method i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .summary-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Login Page */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .login-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .login-content {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+        }
+
+        .login-content .logo {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .login-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .login-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-list i {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        .login-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 450px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+
+        .login-box h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-box .subtitle {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            accent-color: var(--primary);
+        }
+
+        .forgot-password {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .divider span {
+            padding: 0 1rem;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+            background: var(--dark);
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            margin-bottom: 3rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .user-details h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .user-details p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            color: var(--gray);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-menu a.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .notification-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            cursor: pointer;
+            position: relative;
+            font-size: 1.2rem;
+        }
+
+        .notification-btn::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card-header span {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .stat-card-header i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            color: var(--success);
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .usage-chart {
+            height: 200px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usage-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: var(--gradient);
+            border-radius: 12px 12px 0 0;
+            transition: height 1s ease;
+        }
+
+        .usage-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .transaction-list {
+            list-style: none;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .transaction-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .transaction-amount.negative {
+            color: var(--light);
+        }
+
+        /* Receipt */
+        .receipt-modal .modal {
+            max-width: 500px;
+            background: white;
+            color: var(--dark);
+        }
+
+        .receipt-header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 2px dashed #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .receipt-header .logo {
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .receipt-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .receipt-status {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--success);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .receipt-details {
+            margin-bottom: 2rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-row.total {
+            border-top: 2px solid var(--dark);
+            border-bottom: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .receipt-footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 2px dashed #e2e8f0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .receipt-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .receipt-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: var(--dark);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--success);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 3000;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Loading Animation */
+        .loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .loader.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-card.featured {
+                transform: none;
+            }
+
+            .login-container {
+                flex-direction: column;
+            }
+
+            .login-left {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            MJ.NEYT
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#plans">Plans</a></li>
+            <li><a href="#coverage">Coverage</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn btn-outline" onclick="showLogin()">Sign In</button>
+            <button class="btn btn-primary" onclick="scrollToPlans()">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Internet at the Speed of Light</h1>
+                <p>Experience ultra-low latency fiber internet with symmetrical speeds up to 1.5 Gbps. No lock-in contracts, no hidden fees.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1ms</span>
+                        <span class="stat-label">Latency</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-large" onclick="scrollToPlans()">
+                    View Plans <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="speed-card">
+                    <div class="speed-test-display">
+                        <div class="speed-value">1.2</div>
+                        <div class="speed-unit">Gbps</div>
+                        <div class="connection-status">
+                            <div class="pulse"></div>
+                            <span>Connected • Fiber Optic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans-section" id="plans">
+        <div class="section-header">
+            <h2>Choose Your Speed</h2>
+            <p>Flexible plans designed for every need. Upgrade or downgrade anytime with no penalties.</p>
+        </div>
+
+        <div class="plans-toggle">
+            <button class="toggle-btn active" onclick="switchPlans('postpaid')">Postpaid</button>
+            <button class="toggle-btn" onclick="switchPlans('prepaid')">Prepaid</button>
+        </div>
+
+        <div class="plans-grid" id="plansGrid">
+            <!-- Postpaid Plans -->
+            <div class="plan-card" data-plan="starter">
+                <div class="plan-header">
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-speed">300<span>Mbps</span></div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-tag">₱1,499<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Unlimited Data</li>
+                    <li><i class="fas fa-check"></i> WiFi 6 Modem Included</li>
+                    <li><i class="fas fa-check"></i> Blast TV Access</li>
+                    <li><i class="fas fa-check"></i> Disney+ Premium (FHD)</li>
+                    <li class="unavailable"><i class="fas fa-times"></i> VIP Support</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Starter', 1499, '300 Mbps')">Subscribe Now</button>
+            </div>
+
+            <div class="plan-card featured" data-plan="pro">
+                <div class="plan-header">
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-speed">500<span>Mbps</span></div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-tag">₱1,999<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Unlimited Data</li>
+                    <li><i class="fas fa-check"></i> WiFi 6 Mesh System</li>
+                    <li><i class="fas fa-check"></i> Blast TV + 4K Channels</li>
+                    <li><i class="fas fa-check"></i> Disney+ Premium (4K)</li>
+                    <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Pro', 1999, '500 Mbps')">Subscribe Now</button>
+            </div>
+
+            <div class="plan-card" data-plan="ultra">
+                <div class="plan-header">
+                    <h3 class="plan-name">Ultra</h3>
+                    <div class="plan-speed">1<span>Gbps</span></div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-tag">₱4,999<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Unlimited Data</li>
+                    <li><i class="fas fa-check"></i> Tri-Band WiFi 6E</li>
+                    <li><i class="fas fa-check"></i> Premium TV Package</li>
+                    <li><i class="fas fa-check"></i> Disney+ + Netflix 4K</li>
+                    <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Ultra', 4999, '1 Gbps')">Subscribe Now</button>
+            </div>
+
+            <div class="plan-card" data-plan="legend">
+                <div class="plan-header">
+                    <h3 class="plan-name">Legend</h3>
+                    <div class="plan-speed">1.5<span>Gbps</span></div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-tag">₱7,499<span>/month</span></div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Unlimited Data</li>
+                    <li><i class="fas fa-check"></i> Fiber-to-the-Room (NCR)</li>
+                    <li><i class="fas fa-check"></i> All Premium Channels</li>
+                    <li><i class="fas fa-check"></i> Complete Streaming Suite</li>
+                    <li><i class="fas fa-check"></i> White Glove Installation</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Legend', 7499, '1.5 Gbps')">Subscribe Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Modal -->
+    <div class="modal-overlay" id="subscribeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Complete Your Subscription</h3>
+                <button class="close-btn" onclick="closeModal('subscribeModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="subscribeForm" onsubmit="processSubscription(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" required placeholder="Juan">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" required placeholder="Dela Cruz">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required placeholder="juan@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" required placeholder="+63 912 345 6789">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Installation Address</label>
+                        <input type="text" required placeholder="Street Address, Barangay, City">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" required placeholder="Makati">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" required placeholder="1200">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Installation Date</label>
+                        <input type="date" required min="2025-03-03">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <div class="payment-methods">
+                            <div class="payment-method selected" onclick="selectPayment(this)">
+                                <i class="fas fa-credit-card"></i>
+                                <div>Card</div>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this)">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div>GCash</div>
+                            </div>
+                            <div class="payment-method" onclick="selectPayment(this)">
+                                <i class="fas fa-university"></i>
+                                <div>Bank</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <div class="summary-row">
+                            <span>Plan</span>
+                            <span id="summaryPlan">Pro - 500 Mbps</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Monthly Fee</span>
+                            <span id="summaryPrice">₱1,999.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Installation Fee</span>
+                            <span style="color: var(--success);">FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Device Deposit</span>
+                            <span style="color: var(--success);">Waived</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Due Today</span>
+                            <span id="summaryTotal">₱1,999.00</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Confirm Subscription <i class="fas fa-lock"></i>
+                    </button>
+                    
+                    <div class="secure-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>256-bit SSL Encrypted & PCI Compliant</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div class="login-container hidden" id="loginPage">
+        <div class="login-left">
+            <div class="login-content">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    MJ.NEYT
+                </div>
+                <h1>Welcome Back to Lightning Speed</h1>
+                <p>Manage your account, monitor usage, and upgrade your plan all in one place.</p>
+                
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Real-time bandwidth monitoring</li>
+                    <li><i class="fas fa-check-circle"></i> Instant plan upgrades</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 technical support chat</li>
+                    <li><i class="fas fa-check-circle"></i> Auto-pay and billing history</li>
+                </ul>
+            </div>
+        </div>
+        <div class="login-right">
+            <div class="login-box">
+                <h2>Sign In</h2>
+                <p class="subtitle">Enter your credentials to access your account</p>
+                
+                <form onsubmit="handleLogin(event)">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required id="loginEmail">
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required id="loginPassword">
+                    </div>
+
+                    <div class="login-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn">
+                        <i class="fab fa-apple"></i>
+                        <span>Apple</span>
+                    </button>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--gray);">
+                    Don't have an account? <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    MJ.NEYT
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <h4>Juan Dela Cruz</h4>
+                        <p>Pro Plan • Active</p>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Usage</a></li>
+                <li><a href="#"><i class="fas fa-receipt"></i> Bills & Payments</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="btn btn-primary">Upgrade Plan</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span>Current Plan</span>
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="stat-value">Pro</div>
+                    <div class="stat-change">500 Mbps</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span>Monthly Usage</span>
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="stat-value">847 GB</div>
+                    <div class="stat-change">↑ 12% vs last month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span>Next Billing</span>
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="stat-value">Mar 15</div>
+                    <div class="stat-change">₱1,999.00</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span>Account Status</span>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-value" style="color: var(--success);">Active</div>
+                    <div class="stat-change">Auto-renewal on</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Data Usage This Month</h3>
+                        <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Details</button>
+                    </div>
+                    <div class="usage-chart">
+                        <div class="usage-bar"></div>
+                    </div>
+                    <div class="usage-labels">
+                        <span>0 GB</span>
+                        <span>500 GB</span>
+                        <span>1 TB</span>
+                        <span>Unlimited</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Transactions</h3>
+                    </div>
+                    <ul class="transaction-list">
+                        <li class="transaction-item">
+                            <div class="transaction-info">
+                                <h4>Monthly Subscription</h4>
+                                <p>Feb 15, 2025</p>
+                            </div>
+                            <span class="transaction-amount negative">-₱1,999.00</span>
+                        </li>
+                        <li class="transaction-item">
+                            <div class="transaction-info">
+                                <h4>Referral Bonus</h4>
+                                <p>Feb 10, 2025</p>
+                            </div>
+                            <span class="transaction-amount">+₱500.00</span>
+                        </li>
+                        <li class="transaction-item">
+                            <div class="transaction-info">
+                                <h4>Plan Upgrade</h4>
+                                <p>Jan 15, 2025</p>
+                            </div>
+                            <span class="transaction-amount negative">-₱500.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div class="modal-overlay receipt-modal" id="receiptModal">
+        <div class="modal">
+            <div class="modal-body" style="padding: 2.5rem;">
+                <div class="receipt-header">
+                    <div class="logo">
+                        <i class="fas fa-bolt"></i>
+                        MJ.NEYT
+                    </div>
+                    <h2>Payment Receipt</h2>
+                    <p style="color: var(--gray);">Official Transaction Record</p>
+                    <span class="receipt-status">PAID</span>
+                </div>
+
+                <div class="receipt-details">
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Transaction ID</span>
+                        <strong id="receiptTransId">MJN-20250302-78432</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Date & Time</span>
+                        <strong id="receiptDate">March 2, 2025 • 2:34 PM</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Customer</span>
+                        <strong id="receiptCustomer">Juan Dela Cruz</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Email</span>
+                        <strong>juan.delacruz@email.com</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Service Address</span>
+                        <strong>123 Makati Ave, Brgy. Poblacion, Makati City 1200</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Plan Subscribed</span>
+                        <strong id="receiptPlan">Pro Plan (500 Mbps)</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Billing Cycle</span>
+                        <strong>Monthly</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span style="color: var(--gray);">Payment Method</span>
+                        <strong>Visa ending in 4242</strong>
+                    </div>
+                    <div class="detail-row total">
+                        <span>Amount Paid</span>
+                        <strong id="receiptAmount">₱1,999.00</strong>
+                    </div>
+                </div>
+
+                <div class="receipt-footer">
+                    <p>Thank you for choosing MJ.NEYT Fiber!</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">For questions, contact support@mjneyt.net or call (02) 8-888-8888</p>
+                    <p style="margin-top: 1rem; font-size: 0.75rem; color: #94a3b8;">
+                        This is an official receipt. Please keep for your records.<br>
+                        MJ.NEYT Telecom Inc. • SEC Reg. No. CS201912345 • VAT Reg. TIN: 123-456-789-000
+                    </p>
+                </div>
+
+                <div class="receipt-actions">
+                    <button class="btn btn-secondary" onclick="downloadReceipt()">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button class="btn btn-primary" onclick="goToDashboard()">
+                        <i class="fas fa-arrow-right"></i> Go to Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <p>Processing your subscription...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Subscription successful! Welcome to MJ.NEYT.</span>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll to plans
+        function scrollToPlans() {
+            document.getElementById('plans').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Switch between postpaid and prepaid plans
+        function switchPlans(type) {
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const plansGrid = document.getElementById('plansGrid');
+            
+            if (type === 'prepaid') {
+                plansGrid.innerHTML = `
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Weekly Pass</h3>
+                            <div class="plan-speed">100<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱399<span>/7 days</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Unlimited Data</li>
+                            <li><i class="fas fa-check"></i> No Contract</li>
+                            <li><i class="fas fa-check"></i> Instant Activation</li>
+                        </ul>
+                        <button class                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Weekly Pass', 399, '100 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Monthly Lite</h3>
+                            <div class="plan-speed">50<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱699<span>/30 days</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Unlimited Data</li>
+                            <li><i class="fas fa-check"></i> Basic WiFi Modem</li>
+                            <li><i class="fas fa-check"></i> Reload Anytime</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Monthly Lite', 699, '50 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Monthly Pro</h3>
+                            <div class="plan-speed">300<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱1,499<span>/30 days</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Unlimited Data</li>
+                            <li><i class="fas fa-check"></i> WiFi 6 Modem</li>
+                            <li><i class="fas fa-check"></i> Priority Speed</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Monthly Pro', 1499, '300 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Annual Saver</h3>
+                            <div class="plan-speed">100<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱9,999<span>/year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Save ₱2,989</li>
+                            <li><i class="fas fa-check"></i> 365 Days Unlimited</li>
+                            <li><i class="fas fa-check"></i> Premium Support</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Annual Saver', 9999, '100 Mbps')">Buy Now</button>
+                    </div>
+                `;
+            } else {
+                location.reload(); // Reload to reset to postpaid
+            }
+        }
+
+        // Modal Functions
+        let selectedPlan = { name: '', price: 0, speed: '' };
+
+        function openSubscribeModal(planName, price, speed) {
+            selectedPlan = { name: planName, price: price, speed: speed };
+            document.getElementById('summaryPlan').textContent = `${planName} - ${speed}`;
+            document.getElementById('summaryPrice').textContent = `₱${price.toLocaleString()}.00`;
+            document.getElementById('summaryTotal').textContent = `₱${price.toLocaleString()}.00`;
+            document.getElementById('subscribeModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectPayment(element) {
+            document.querySelectorAll('.payment-method').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Process Subscription
+        function processSubscription(event) {
+            event.preventDefault();
+            
+            // Close subscribe modal
+            closeModal('subscribeModal');
+            
+            // Show loader
+            document.getElementById('loader').classList.add('active');
+            
+            // Simulate processing
+            setTimeout(() => {
+                document.getElementById('loader').classList.remove('active');
+                
+                // Generate receipt details
+                const now = new Date();
+                const transId = 'MJN-' + now.getFullYear() + 
+                               String(now.getMonth() + 1).padStart(2, '0') + 
+                               String(now.getDate()).padStart(2, '0') + '-' + 
+                               Math.floor(10000 + Math.random() * 90000);
+                
+                document.getElementById('receiptTransId').textContent = transId;
+                document.getElementById('receiptDate').textContent = now.toLocaleDateString('en-US', { 
+                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' 
+                });
+                document.getElementById('receiptPlan').textContent = `${selectedPlan.name} Plan (${selectedPlan.speed})`;
+                document.getElementById('receiptAmount').textContent = `₱${selectedPlan.price.toLocale <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Weekly Pass', 399, '100 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Monthly Lite</h3>
+                            <div class="plan-speed">50<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱699<span>/30 days</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Unlimited Data</li>
+                            <li><i class="fas fa-check"></i> Basic WiFi Modem</li>
+                            <li><i class="fas fa-check"></i> Reload Anytime</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Monthly Lite', 699, '50 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Monthly Pro</h3>
+                            <div class="plan-speed">300<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱1,499<span>/30 days</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Unlimited Data</li>
+                            <li><i class="fas fa-check"></i> WiFi 6 Modem</li>
+                            <li><i class="fas fa-check"></i> Priority Speed</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Monthly Pro', 1499, '300 Mbps')">Buy Now</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Annual Saver</h3>
+                            <div class="plan-speed">100<span>Mbps</span></div>
+                        </div>
+                        <div class="plan-price">
+                            <div class="price-tag">₱9,999<span>/year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Save ₱2,989</li>
+                            <li><i class="fas fa-check"></i> 365 Days Unlimited</li>
+                            <li><i class="fas fa-check"></i> Premium Support</li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openSubscribeModal('Annual Saver', 9999, '100 Mbps')">Buy Now</button>
+                    </div>
+                `;
+            } else {
+                location.reload(); // Reload to reset to postpaid
+            }
+        }
+
+        // Modal Functions
+        let selectedPlan = { name: '', price: 0, speed: '' };
+
+        function openSubscribeModal(planName, price, speed) {
+            selectedPlan = { name: planName, price: price, speed: speed };
+            document.getElementById('summaryPlan').textContent = `${planName} - ${speed}`;
+            document.getElementById('summaryPrice').textContent = `₱${price.toLocaleString()}.00`;
+            document.getElementById('summaryTotal').textContent = `₱${price.toLocaleString()}.00`;
+            document.getElementById('subscribeModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectPayment(element) {
+            document.querySelectorAll('.payment-method').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Process Subscription
+        function processSubscription(event) {
+            event.preventDefault();
+            
+            // Close subscribe modal
+            closeModal('subscribeModal');
+            
+            // Show loader
+            document.getElementById('loader').classList.add('active');
+            
+            // Simulate processing
+            setTimeout(() => {
+                document.getElementById('loader').classList.remove('active');
+                
+                // Generate receipt details
+                const now = new Date();
+                const transId = 'MJN-' + now.getFullYear() + 
+                               String(now.getMonth() + 1).padStart(2, '0') + 
+                               String(now.getDate()).padStart(2, '0') + '-' + 
+                               Math.floor(10000 + Math.random() * 90000);
+                
+                document.getElementById('receiptTransId').textContent = transId;
+                document.getElementById('receiptDate').textContent = now.toLocaleDateString('en-US', { 
+                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' 
+                });
+                document.getElementById('receiptPlan').textContent = `${selectedPlan.name} Plan (${selectedPlan.speed})`;
+                document.getElementById('receiptAmount').textContent = `₱${selectedPlan.price.toLocaleString()}.String()}.00`;
+                
+                // Show receipt
+                document.getElementById('receiptModal').classList.add('active');
+                
+                // Show toast
+                showToast();
+            }, 2000);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function downloadReceipt() {
+            alert('Receipt downloaded as PDF');
+        }
+
+        function goToDashboard() {
+            closeModal('receiptModal');
+            showLogin();
+            // Auto-fill login for demo
+            document.getElementById('loginEmail').value = 'juan.delacruz@email.com';
+        }
+
+        // Login Functions
+        function showLogin() {
+            document.getElementById('loginPage').classList.remove('hidden');
+            document.getElementById('loginPage').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            // Show loader
+            document.getElementById('loader').classList.add('active');
+            document.getElementById('loader').querySelector('p').textContent = 'Authenticating...';
+            
+            setTimeout(() => {
+                document.getElementById('loader').classList.remove('active');
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('dashboard').style.display = 'block';
+                document.body.style.overflow = 'auto';
+                
+                // Animate usage bar
+                setTimeout(() => {
+                    document.querySelector('.usage-bar').style.height = '65%';
+                }, 500);
+            }, 1500);
+        }
+
+        function logout() {
+            location.reload();
+        }
+
+        // Close modals on outside click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay && !overlay.id.includes('receipt')) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Set minimum date for installation to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.querySelector('input[type="date"]').min = tomorrow.toISOString().split('T')[0];
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
